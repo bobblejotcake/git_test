@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add7 (number){
+            return number + 7;
+        }
+        console.log(add7(10));
+
+        function multiply(num1,num2){
+            return num1*num2;
+        }
+        console.log(multiply(3,2));
+
+        function captialize(string){
+            let restSentence = string.toLowerCase().slice(1);
+
+            //Grab the whole sentence to lowercase.
+
+            //Get the first letter
+            let firstLetter = string.toUpperCase().slice(0,1)
+            //Merge the two
+            let final = firstLetter.concat("",restSentence);
+
+            return final;
+        }
+        console.log(captialize("aBcF"));
+
+        function lastLetter(string){
+            return string.slice(-1);
+        }
+
+        console.log(lastLetter("welp"));
+
+        function isEven(num){
+            return num % 2 == 0;
+        }
+
+        function tripleNumbers(num){
+            return num*num*num;
+        }
+
+     
+
+        let sumArray = [1,2,3,4,5]
+        newArray = sumArray.filter(isEven).map(tripleNumbers)
+        .reduce((total, currentNum)=> {return total+currentNum});
+        console.log(newArray);
+
+
+        function camelize(str){
+        //take the string and remove dashes
+        let camelArray=str.split('-');
+        let newArray=camelArray.map(capWord).join('');
+        console.log(newArray);
+        // put it into an array
+
+        //captilize the first letter of each word
+        function capWord(word){
+            return word.slice(0,1).toUpperCase() + word.slice(1);
+        }
+        
+        return newArray;
+        //combine all array into one word
+        }
+
+
+    camelize('help-yo');
+
+    
+
+    function filterRange(arr,lowNum,highNum){
+        return arr.filter(num => num >= lowNum && num <= highNum);
+    }
+
+
+    let arr = [5,3,8,1,2,9];
+    
+    filterRangeInPlace(arr,1,4);
+    console.log(arr);
+    </script>
+    
+</body>
+</html>
