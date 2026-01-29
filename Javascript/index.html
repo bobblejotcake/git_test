@@ -80,9 +80,85 @@
 
 
     let arr = [5,3,8,1,2,9];
+
+    function filterRangeInPlace(arr,minNum,maxNum){
+        let i = arr.length;
+        for(i; i >= 0; i--){
+            if(arr[i] < minNum || arr[i] > maxNum){
+                arr.splice(i,1)
+                
+            }
+        }
+    }
     
     filterRangeInPlace(arr,1,4);
     console.log(arr);
+
+    let arrOrder = [5,2,1,-10,8];
+    //grab first item + the items next to it
+    //if it's not bigger, retain 
+    //if not, take then ew value
+    console.log(arrOrder.sort().reverse());
+
+    let wordArr = ["apples", "oranges", "Mango"];
+    function copySorted(arr){
+        return arr.slice().sort();
+    }
+
+    let sorted = copySorted(wordArr);
+    console.log(sorted);
+    console.log(wordArr);
+
+
+    function shuffle(arr){
+        //get the total amount of items in the array and split
+        let chance = 1/arr.length;
+        console.log(chance);
+        let finalShuffle = [];
+
+        let arrayCopy = arr.slice();
+        //For every element in the arr, roll the dice
+        while (arrayCopy.length > 0){
+            for (number in arrayCopy){
+                 //roll the dice
+                 if (Math.random() <= chance){
+                    console.log('hit');
+                    finalShuffle.push(arrayCopy[number]);
+                    arrayCopy.splice(number,1);
+                 }
+             }
+        }
+             
+         
+        
+        return finalShuffle;
+        //if it hits, put it into a new array and take it out of the old array
+        //otherwise keep rolling.
+    }
+
+    let gamba = [1,2,3,4,5,6]
+    console.log(shuffle(gamba));
+
+
+    function unique(arr){
+        let uniqueArray = [];
+        for(let i=0; i < arr.length; i++){
+            
+            if(uniqueArray.includes(arr[i])){
+                continue;
+            }
+            else{
+                uniqueArray.push(arr[i]);
+                
+            }
+        }
+        return uniqueArray;
+    }
+
+    let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+
+  console.log(unique(strings));
     </script>
     
 </body>
